@@ -1,0 +1,19 @@
+{
+  "name": "prs-soft",
+  "version": "1.0.0",
+  "description": "Local billing web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "billing",
+    "nodejs",
+    "vue"
+  ],
+  "author": "Aswin VTK",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

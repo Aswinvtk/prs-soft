@@ -1,0 +1,44 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Billing App</title>
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    <h2>Billing App</h2>
+    <input v-model="customer" placeholder="Customer Name" />
+    <table>
+      <tr v-for="(item, i) in items" :key="i">
+        <td><input v-model="item.name" placeholder="Item" /></td>
+        <td><input v-model.number="item.qty" type="number" /></td>
+        <td><input v-model.number="item.price" type="number" /></td>
+      </tr>
+    </table>
+    <button @click="addItem">Add Item</button>
+    <p><strong>Total: ₹{{ total }}</strong></p>
+  </div>
+
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          customer: '',
+          items: [{ name: '', qty: 1, price: 0 }]
+        };
+      },
+      computed: {
+        total() {
+          return this.items.reduce((sum, i) => sum + (i.qty * i.price), 0);
+        }
+      },
+      methods: {
+        addItem() {
+          this.items.push({ name: '', qty: 1, price: 0 });
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
