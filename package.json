@@ -1,0 +1,17 @@
+{
+  "name": "prs-soft",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "npm start --prefix frontend",
+    "server": "nodemon backend/server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "mongoose": "^7.x.x",
+    "react-scripts": "^0.0.0"
+  }
+}
